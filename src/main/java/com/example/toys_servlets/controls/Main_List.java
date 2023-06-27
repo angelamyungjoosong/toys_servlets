@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "main_List")
+import com.example.toys_servlets.daos.PollDao;
+
+@WebServlet(urlPatterns = "/main_List")
 public class Main_List extends HttpServlet
 {
     @Override
@@ -20,19 +22,15 @@ public class Main_List extends HttpServlet
     {
         try
         {
-            String url = "jdbc:mysql://192.168.0.42:3306/db_cars";
+            String url = "jdbc:mysql://192.168.0.40:3306/db_poll";
             String user = "yojulab";
             String password = "!yojulab*";
 
             Connection connection = DriverManager.getConnection(url, user, password);
             System.out.println("DB연결 성공\n");
 
-            Survey survey = new Survey();
-            Statement statement = connection.createStatement();
-
-            String query = "SELECT * FROM  db_poll.question_choice;\n" + //
-                    "";
-            ResultSet resultSet = statement.executeQuery(query);
+            PollDao pollDao = new PollDao();
+            int cnt = pollDao.PollDaoCountServlet();
         }
         
         catch (Exception e)
