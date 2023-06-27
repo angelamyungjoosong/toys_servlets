@@ -1,4 +1,4 @@
-package com.example.study_servlet.filters;
+package com.example.toys_servlets.filters;
 
 import java.io.IOException;
 
