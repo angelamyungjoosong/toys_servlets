@@ -1,4 +1,4 @@
-package com.example.toys_servlets.filters;
+package com.example.toys_servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
