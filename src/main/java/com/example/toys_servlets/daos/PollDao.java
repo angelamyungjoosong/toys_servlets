@@ -25,8 +25,26 @@ public class PollDao {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        return cnt;
-}
+        return cnt;}
+
+    //문항당 답항별 총 수 메소드
+    public int PollDaoTot(){
+        try {
+            Commons commons = new Commons();
+            Statement statement = commons.getStatement();
+            String query = "SELECT QUESTIONS_ID, CHOICE_ID, COUNT(*)\n" + //
+                    "FROM statistics\n" + //
+                    "GROUP BY QUESTIONS_ID, CHOICE_ID\n" + //
+                    "ORDER BY QUESTIONS_ID, CHOICE_ID;";
+
+
+            
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+
 
     // 회원 리스트 메소드
     public ArrayList selectAll(String unique_id) {
@@ -51,3 +69,20 @@ public class PollDao {
         return arrayList;
     }
 }
+
+
+//public class PollDao{
+
+    //통계 참여자 총수 메소드
+    //public int PollDaoCountServlet(){
+      //int cnt = 0 ;
+        //try {
+            //Commons commons = new Commons();
+            //Statement statement = commons.getStatement();
+           // String query = "SELECT COUNT(*) AS CNT\n" + //
+                    //"FROM (SELECT COUNT(*) \n" + //
+                   // "FROM statistics\n" + //
+                   // "GROUP BY RESPONDENTS_ID)AS T_CNT;\n" + //
+                   // "";
+           //ResultSet resultSet = statement.executeQuery(query); 
+          // cnt = resultSet.getInt(query);
