@@ -1,5 +1,21 @@
 package com.example.toys_servlets.controls;
 
-public class Survey {
-    
+import java.util.ArrayList;
+
+public class Survey
+{
+    public ArrayList survey()
+    {
+        ArrayList arrayList = new ArrayList();
+        try
+        {
+            
+        }
+        
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+        return arrayList;
+    }
 }
