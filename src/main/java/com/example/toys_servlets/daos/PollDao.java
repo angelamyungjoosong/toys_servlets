@@ -7,7 +7,29 @@ import java.util.HashMap;
 
 import com.example.toys_servlets.commons.Commons;
 
-public class PollDao {
+
+public class PollDao{
+    //통계 참여자 총수 메소드
+    public int PollDaoCountServlet(){
+      
+        try {
+            Commons commons = new Commons();
+            Statement statement = commons.getStatement();
+            String query = "SELECT COUNT(*) \n" + //
+                    "FROM (SELECT COUNT(*) \n" + //
+                    "FROM statistics\n" + //
+                    "GROUP BY RESPONDENTS_ID)AS CNT;\n" + //
+                    "";
+                    
+           ResultSet resultSet = statement.executeQuery(query); 
+           int cnt = resultSet.getInt(query);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return cnt;
+}
+
+    // 회원 리스트 메소드
     public ArrayList selectAll(String unique_id) {
         ArrayList arrayList = new ArrayList();
         try {
