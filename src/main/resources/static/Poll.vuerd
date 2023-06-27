@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -883.2005305190861,
-    "scrollLeft": -976.8810688003352,
-    "zoomLevel": 0.9,
+    "scrollTop": 0,
+    "scrollLeft": 0,
+    "zoomLevel": 0.8,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -182,7 +182,7 @@
           "active": false,
           "left": 1057.3267,
           "top": 976.793,
-          "zIndex": 6,
+          "zIndex": 5,
           "widthName": 100.9599609375,
           "widthComment": 60
         },

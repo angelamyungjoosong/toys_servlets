@@ -1,4 +1,4 @@
-package com.example.study_servlet.commons;
+package com.example.toys_servlets.commons;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
