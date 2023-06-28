@@ -7,11 +7,10 @@
 - 프로젝트 기간 : 2023. 06. 13 ~ 2023. 06. 15
 
 ## MEMBER & PART 
-- 임거산: 통계
+- 임거산: 회원 리스트 & 회원 상세정보
  https://github.com/angelamyungjoosong/toys.javas/blob/master/src/terminalpolls/PollStatistics.java
-- 정지운: 문항 초기화 및 입력 
-- 송명주: 데이터 엑셀 및 ERD로 작성 설문자 출력 
-- 김혜인: 데이터 엑셀 및 ERD로 작성 설문자 출력 
+- 정지운: 설문조사 
+- 송명주: 통계 & 로그인
 https://github.com/angelamyungjoosong/toys.javas/blob/master/src/PollsWithDB.java)
 
 
@@ -27,7 +26,6 @@ https://github.com/angelamyungjoosong/toys.javas/blob/master/src/PollsWithDB.jav
 프로젝트 소감
 
 
-- 정지운: 프로젝트를 시작하기 전에 HASHMAP에 대해 자세하게 몰랐는데 적용하기 위해서 하다보니까 더 자세히 알게 되었다 
-- 김혜인: 나누어서 작업을 하고 난 후 마지막에 종합할 때 어려웠습니다 
-- 임거산: 원격으로 작업했을때 소통에 대한 불편함이 있었지만 덕분에 주석에 대한 소중함을 알게 되었다 
-- 송명주: 각자 작업한 내용을 합치는데 있어 생각보다 많은 시간과 노력을 든다는 것을 느꼈고 따라서 효과적인 소통의 중요성에 대해 생각하게 되었다 
+- 정지운: 
+- 임거산: 
+- 송명주: 
