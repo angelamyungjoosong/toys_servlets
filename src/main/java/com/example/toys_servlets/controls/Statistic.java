@@ -16,12 +16,12 @@ import com.example.toys_servlets.daos.PollDao;
 public class Statistic extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-     try {
-
-        int cnt=0;
+     
+      int cnt=0;
         int tot=0;
+        try {
         PollDao pollDao = new PollDao();
-        cnt = pollDao.PollDaoCount(cnt);
+        cnt = pollDao.PollDaoCount();
 
         ArrayList totStatList = new ArrayList<>();
         totStatList = pollDao.PollDaoTot(tot);
