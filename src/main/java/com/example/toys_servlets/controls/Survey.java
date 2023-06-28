@@ -75,7 +75,7 @@ public class Survey extends HttpServlet
                 arrayList.add(query);
                 number = number + 1;
             }
-                int total = statement.executeUpdate(String.valueOf(arrayList));
+                // int total = statement.executeUpdate(String.valueOf(arrayList));
 
             requestDispatcher.forward(request, response);
         }
