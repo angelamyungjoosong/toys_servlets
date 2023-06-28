@@ -31,28 +31,28 @@
                     <td class="col-1">1</td>
                     <td class="col-3">홍길동</td>
                     <td>
-                        <button type="submit" formaction="/polls/user_info.jsp"> R-01</button>
+                        <button formaction="/user_Info"> R-01</button>
                     </td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>장길산</td>
                     <td>
-                        <button type="submit" formaction="/polls/user_info.jsp">R-02</button>
+                        <button formaction="/user_Info">R-02</button>
                     </td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td>신사임당</td>
                     <td>
-                        <button type="submit" formaction="/polls/user_info.jsp">R-03</button>
+                        <button formaction="/user_Info">R-03</button>
                     </td>
                 </tr>
                 <tr>
                     <td>4</td>
                     <td>김철수</td>
                     <td>
-                        <button type="submit" formaction="/polls/user_info.jsp">R-04</button>
+                        <button formaction="/user_Info">R-04</button>
                     </td>
                 </tr>
             </tbody>
