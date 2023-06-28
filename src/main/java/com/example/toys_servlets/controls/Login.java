@@ -17,11 +17,8 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
      try{
-
-         String username = request.getParameter("Username");
-        String password = request.getParameter("Password");
      RequestDispatcher requestDispatcher = request.getRequestDispatcher("/polls/login.jsp");
-         requestDispatcher.forward(request,response); 
+     requestDispatcher.forward(request,response); 
      } catch (Exception e) {
         System.out.println(e.getMessage());
     }

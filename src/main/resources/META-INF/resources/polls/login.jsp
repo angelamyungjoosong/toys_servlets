@@ -36,7 +36,7 @@
                                 type="text">
                                 <label class="form-label" for="">Password</label><input name="Password" class="form-control"
                                 type="text">
-                                <hr>
+
                      <div class =  "text-end">
                             <button class="btn btn-primary">LOG IN</button>
                         </div>
