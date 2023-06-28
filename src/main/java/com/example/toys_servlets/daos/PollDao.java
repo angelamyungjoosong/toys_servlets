@@ -9,7 +9,7 @@ import com.example.toys_servlets.commons.Commons;
 
 public class PollDao {
     // 통계 참여자 총수 메소드
-    public int PollDaoCountServlet(int cnt) {
+    public int PollDaoCount(int cnt) {
         cnt = 0;
         try {
             Commons commons = new Commons();

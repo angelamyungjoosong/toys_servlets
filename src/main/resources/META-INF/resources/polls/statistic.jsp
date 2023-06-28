@@ -40,7 +40,7 @@
         <thead>
             <thead>
                 <th>참여자 총수: 
-                    <% int cnt = (int) request.getAttribute("cnt"); %>  명</th>
+                    <% String cnt = (String)request.getAttribute("cnt"); %> 명</th>
             </thead>
         </thead>
        </table>
