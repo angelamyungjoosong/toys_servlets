@@ -27,8 +27,6 @@ public class Main_List extends HttpServlet
             ArrayList userInforList = new ArrayList<>();
             userInforList = userInforsDao.selectAll(unique_id);
 
-            PollDao pollDao = new PollDao();
-            int cnt = pollDao.PollDaoCountServlet();
             request.setAttribute("RESPONDENTS", userInforsDao);
             request.setAttribute("RESPONDENTS_ID", userInforList);
 
