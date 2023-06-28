@@ -9,8 +9,8 @@ import com.example.toys_servlets.commons.Commons;
 
 public class PollDao {
     // 통계 참여자 총수 메소드
-    public int PollDaoCountServlet() {
-        int cnt = 0;
+    public int PollDaoCountServlet(int cnt) {
+        cnt = 0;
         try {
             Commons commons = new Commons();
             Statement statement = commons.getStatement();
@@ -28,7 +28,8 @@ public class PollDao {
         return cnt;}
 
     //문항당 답항별 총 수 메소드
-    public int PollDaoTot(){
+    public ArrayList PollDaoTot(int tot){
+         ArrayList arrayList = new ArrayList();
         try {
             Commons commons = new Commons();
             Statement statement = commons.getStatement();
@@ -36,12 +37,19 @@ public class PollDao {
                     "FROM statistics\n" + //
                     "GROUP BY QUESTIONS_ID, CHOICE_ID\n" + //
                     "ORDER BY QUESTIONS_ID, CHOICE_ID;";
+            ResultSet resultSet = statement.executeQuery(query);
+            HashMap hashMap = new HashMap();
+             while (resultSet.next()) {
+                hashMap = new HashMap();
+                hashMap.put("QUESTIONS_ID", resultSet.getString("QUESTIONS_ID"));
+                hashMap.put("CHOICE_ID", resultSet.getString("CHOICE_ID"));
+                hashMap.put("COUNT(*)", resultSet.getString("COUNT(*)"));
+                arrayList.add(hashMap);}
 
-
-            
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        return arrayList;
     }
     
 
