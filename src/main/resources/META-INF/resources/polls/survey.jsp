@@ -9,7 +9,7 @@
     <%@ include file="/polls/tops.jsp" %>
     <%@ include file="/polls/top_menus.jsp" %>
     <div class="container">
-        <form action="/main_List">
+        <form action="/statisticServlet">
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>

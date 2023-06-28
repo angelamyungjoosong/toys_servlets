@@ -25,7 +25,7 @@
 
     <div class="container justify-content-center w-50">
         <table class="table table-bordered table-hover">
-            <form action="/polls/main_list.jsp"  method="get">
+            <form action="/survey"  method="get">
                 <thead>
                     <th><div class="text-center">로그인</div></th>
                 </thead>
