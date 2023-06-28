@@ -21,7 +21,7 @@ public class Statistic extends HttpServlet {
         int tot=0;
         try {
         PollDao pollDao = new PollDao();
-        cnt = pollDao.PollDaoCount(cnt);
+        cnt = pollDao.PollDaoCount();
 
         ArrayList totStatList = new ArrayList<>();
         totStatList = pollDao.PollDaoTot(tot);

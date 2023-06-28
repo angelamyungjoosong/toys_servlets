@@ -8,11 +8,12 @@ import java.util.HashMap;
 import org.apache.catalina.connector.Request;
 
 import com.example.toys_servlets.commons.Commons;
+import com.example.toys_servlets.controls.Survey;
 
 public class PollDao {
     // 통계 참여자 총수 메소드
-    public int PollDaoCount(int cnt) {
-       cnt = 0;
+    public int PollDaoCount() {
+       int cnt = 0;
         try {
             Commons commons = new Commons();
             Statement statement = commons.getStatement();
@@ -77,7 +78,7 @@ public class PollDao {
         return arrayList;
     }
 
-    public ArrayList Survey()
+    public ArrayList SurveyList()
     {
         ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
         try
