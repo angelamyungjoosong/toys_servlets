@@ -20,8 +20,12 @@ public class User_Info extends HttpServlet{
             String pws = request.getParameter("password");
 
             PollDao userInforsDao = new PollDao();
-            ArrayList userInforList = new ArrayList<>();
-            userInforList = userInforsDao.selectAll(pws);
+            ArrayList userPassword = new ArrayList<>();
+            userPassword = userInforsDao.Password(pws);
+
+            request.setAttribute("pws", pws);
+            request.setAttribute("RESPONDENTS", userInforsDao);
+            request.setAttribute("PASSWORDS", userPassword);
 
             // getWriter 전에 charset 하기
             response.setContentType("text/html;charset=UTF-8");

@@ -16,7 +16,7 @@
    <nav class="navbar navbar-expand">
 
     <div class="navbar-nav me-auto">
-        <a href="/main_List" class="nav-link">회원정보</a>
+        <a href="" class="nav-link">회원정보</a>
         <a href="/survey" class="nav-link">설문조사</a>
         <a href="/statisticServlet" class="nav-link">설문통계</a>
     </div>
@@ -25,7 +25,7 @@
 
     <div class="container justify-content-center w-50">
         <table class="table table-bordered table-hover">
-            <form action="/polls/main_list.jsp"  method="get">
+            <form action="/survey"  method="get">
                 <thead>
                     <th><div class="text-center">로그인</div></th>
                 </thead>
