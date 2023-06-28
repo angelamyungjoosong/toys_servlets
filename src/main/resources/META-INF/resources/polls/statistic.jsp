@@ -39,9 +39,8 @@
        <table class="table table-bordered table-hover">
         <thead>
             <thead>
-                <th>참여자 총수: <%
-                    int cnt = request.getAttribute("cnt");
-                    %> 명</th>
+                <th>참여자 총수: 
+                    <% String cnt = (String)request.getAttribute("cnt"); %> 명</th>
             </thead>
         </thead>
        </table>

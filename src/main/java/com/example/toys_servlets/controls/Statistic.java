@@ -21,17 +21,20 @@ public class Statistic extends HttpServlet {
         int cnt=0;
         int tot=0;
         PollDao pollDao = new PollDao();
-        cnt = pollDao.PollDaoCountServlet(cnt);
+        cnt = pollDao.PollDaoCount(cnt);
 
         ArrayList totStatList = new ArrayList<>();
         totStatList = pollDao.PollDaoTot(tot);
 
         request.setAttribute("cnt", cnt);
+
         request.setAttribute("tot", tot);
         request.setAttribute("totStatList", totStatList);
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/polls/statistic.jsp");
         requestDispatcher.forward(request, response);
+
+        System.out.println(cnt);
 
      } catch (Exception e) {
         System.out.println(e.getMessage());
