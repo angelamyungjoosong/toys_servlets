@@ -27,7 +27,7 @@ public class PollDao{
             System.out.println(e.getMessage());
         }
         return cnt;
-}
+    }
 
     // 회원 리스트 메소드
     public ArrayList selectAll(String unique_id) {
