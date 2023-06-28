@@ -27,8 +27,7 @@ public class Survey extends HttpServlet
             response.setContentType("text/html;charset=UTF-8");
 
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/polls/survey.jsp");
-            requestDispatcher.forward(request, response);
-
+            
             String first = request.getParameter("first");
             String second = request.getParameter("second");
             String third = request.getParameter("third");
@@ -42,11 +41,14 @@ public class Survey extends HttpServlet
             HashMap<String, String> choiceInfo = new HashMap<>();
             HashMap<String, String> questionInfo = new HashMap<>();
             HashMap<String, String> answerInfo = new HashMap<>();
+            ArrayList arrayList = new ArrayList<>();
             String queryB = "select cho.choice_id, cho.choice\n" + //
                     "from question_choice as ques_cho\n" + //
                     "inner join choice as cho\n" + //
                     "on ques_cho.choice_id = cho.choice_id\n" + //
                     "and questions_id = 'Q-01';";
+            String query = "SELECT *\n" + //
+                    "FROM db_survey_project.statistics;";
 
             ResultSet resultSet2 = statement.executeQuery(queryB);
             while (resultSet2.next())
@@ -66,9 +68,16 @@ public class Survey extends HttpServlet
             number = 1;
             while (resultSet.next())
             {
-                questionInfo.put(resultSet.getString("questions_id"), choiceInfo.get(String.valueOf(number)));
+                questionInfo.put(String.valueOf(answer[number]), resultSet.getString("questions_id"));
+                query = "update statistics\n" + //
+                       "set choice_id = '" + choiceInfo.get(String.valueOf(number)) + "'\n" + //
+                       "where questions_id = '" + questionInfo.get(String.valueOf(number)) + "';";
+                arrayList.add(query);
                 number = number + 1;
             }
+                // int total = statement.executeUpdate(String.valueOf(arrayList));
+
+            requestDispatcher.forward(request, response);
         }
         
         catch (Exception e)
