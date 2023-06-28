@@ -12,6 +12,7 @@
 
 <body>
      <!-- top menu -->
+     <%@ include file="/polls/tops.jsp" %>
      <%@ include file="/polls/top_menus.jsp" %>
     <div class="container">
        <table class="table table-bordered table-hover">

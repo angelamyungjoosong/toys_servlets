@@ -12,7 +12,8 @@
 
 <body>
     
-    <!-- 메인 헤드부분 -->
+    
+    <%@ include file="/polls/tops.jsp" %>
     <%@ include file="/polls/top_menus.jsp" %>
     
     <!-- 회원 리스트 -->

@@ -36,9 +36,15 @@
                                 type="text">
                                 <label class="form-label" for="">Password</label><input name="Password" class="form-control"
                                 type="text">
+                            <hr>
+                           
 
                      <div class =  "text-end">
-                            <button class="btn btn-primary">LOG IN</button>
+                        <% if(usernameSession == null) { %>
+                            <button class="btn btn-primary" type="submit" formaction="/session/CreateServlet?username=yojulab&password=1234">Login</button> 
+                        <% } else { %>
+                            <button class="btn btn-danger" type="submit" formaction="/session/DeleteServlet">Logout</button>
+                        <% } %>
                         </div>
                         </td>
                     </tr>
