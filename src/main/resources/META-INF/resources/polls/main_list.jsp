@@ -14,6 +14,7 @@
     
     <!-- 메인 헤드부분 -->
     <%@ include file="/polls/top_menus.jsp" %>
+    
     <!-- 회원 리스트 -->
     <form action="/user_Info">
     <div class="container">
