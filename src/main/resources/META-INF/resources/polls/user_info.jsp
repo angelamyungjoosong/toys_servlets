@@ -9,6 +9,10 @@
     <!-- <link rel="stylesheet" href="../css/commons.css"> -->
 </head>
 <body>
+    <!-- 메인 헤드부분 -->
+    <%@ include file="/polls/top_menus.jsp" %>
+
+    <!-- 회원 상세정보 -->
     <form action="/controls/User_Info.java">
     <div class="container">
         <div class="row">

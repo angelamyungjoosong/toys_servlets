@@ -11,23 +11,47 @@ import com.example.toys_servlets.commons.Commons;
 
 public class PollDao {
     // 통계 참여자 총수 메소드
-    public int PollDaoCountServlet() {
-        int cnt = 0;
+    public int PollDaoCount(int cnt) {
+        cnt = 0;
         try {
             Commons commons = new Commons();
             Statement statement = commons.getStatement();
-            String query = "SELECT COUNT(*) \n" + //
-                    "FROM (SELECT COUNT(*) \n" + //
-                    "FROM statistics\n" + //
-                    "GROUP BY RESPONDENTS_ID)AS CNT;\n" + //
-                    "";
-
+            String query = "SELECT count(*) as cnt\n" + //
+                    "FROM (select count(*)\n" + //
+                    "from statistics\n" + //
+                    "group by respondents_id) as t_cnt;";
             ResultSet resultSet = statement.executeQuery(query);
-            cnt = resultSet.getInt(query);
+            while (resultSet.next()) {
+                cnt = resultSet.getInt("cnt");
+            }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        return cnt;
+        return cnt;}
+
+    //문항당 답항별 총 수 메소드
+    public ArrayList PollDaoTot(int tot){
+         ArrayList arrayList = new ArrayList();
+        try {
+            Commons commons = new Commons();
+            Statement statement = commons.getStatement();
+            String query = "SELECT QUESTIONS_ID, CHOICE_ID, COUNT(*)\n" + //
+                    "FROM statistics\n" + //
+                    "GROUP BY QUESTIONS_ID, CHOICE_ID\n" + //
+                    "ORDER BY QUESTIONS_ID, CHOICE_ID;";
+            ResultSet resultSet = statement.executeQuery(query);
+            HashMap hashMap = new HashMap();
+             while (resultSet.next()) {
+                hashMap = new HashMap();
+                hashMap.put("QUESTIONS_ID", resultSet.getString("QUESTIONS_ID"));
+                hashMap.put("CHOICE_ID", resultSet.getString("CHOICE_ID"));
+                hashMap.put("COUNT(*)", resultSet.getString("COUNT(*)"));
+                arrayList.add(hashMap);}
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return arrayList;
     }
 
     // 회원 리스트 메소드

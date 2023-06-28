@@ -21,9 +21,6 @@ public class Main_List extends HttpServlet
     {
         try
         {
-            String url = "jdbc:mysql://192.168.0.40:3306/db_poll";
-            String user = "yojulab";
-            String password = "!yojulab*";
             String unique_id = request.getParameter("unique_id");
 
             PollDao userInforsDao = new PollDao();
@@ -31,7 +28,6 @@ public class Main_List extends HttpServlet
             userInforList = userInforsDao.selectAll(unique_id);
 
             PollDao pollDao = new PollDao();
-            ArrayList arrayList = pollDao.Survey();
             int cnt = pollDao.PollDaoCountServlet();
             request.setAttribute("RESPONDENTS", userInforsDao);
             request.setAttribute("RESPONDENTS_ID", userInforList);
