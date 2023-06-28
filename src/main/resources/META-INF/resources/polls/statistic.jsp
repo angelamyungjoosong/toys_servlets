@@ -11,30 +11,8 @@
 </head>
 
 <body>
-    <div class="container_fluid bg-primary p-4">
-        <div>
-            <div class="row">
-                <div class="col text-center text-white">
-                    <div class="p-4">
-                        <div class="display-5">
-                            설문조사
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <nav class="navbar navbar-expand">
-
-        <div class="navbar-nav me-auto">
-            <a href="/main_List" class="nav-link">회원정보</a>
-            <a href="/survey" class="nav-link">설문조사</a>
-            <a href="/statisticServlet" class="nav-link">설문통계</a>
-        </div>
-        <div>
-            <button class="btn btn-danger">로그아웃</button>
-        </div>
-    </nav>
+     <!-- top menu -->
+     <%@ include file="/polls/top_menus.jsp" %>
     <div class="container">
        <table class="table table-bordered table-hover">
         <thead>

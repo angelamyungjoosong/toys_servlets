@@ -7,8 +7,8 @@
         <a href="/statisticServlet" class="nav-link">설문통계</a>
     </div>
     <div>
-        <form action="/login">
-        <button class="btn btn-danger">로그아웃</button>
+        <form action="">
+        <button class="btn btn-danger" formaction="/loginServlet">로그아웃</button>
         </form>
     </div>
 </nav>
