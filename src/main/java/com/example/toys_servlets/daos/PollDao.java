@@ -128,26 +128,25 @@ public class PollDao {
     }
 
     // 회원상세정보 메소드
-    public ArrayList Password(String password) {
-        ArrayList arrayList = new ArrayList();
-        try {
-            Commons commons = new Commons();
-            Statement statement = commons.getStatement();
-            String query = "SELECT * \n" + //
-                    "FROM db_survey_project.respondents;";
-            ResultSet resultSet = statement.executeQuery(query);// resultset은 재활용 가능
-            HashMap hashMap = new HashMap();
-            hashMap = new HashMap();
+public ArrayList Password() {
+    ArrayList arrayList = new ArrayList<>();
+    try {
+        Commons commons = new Commons();
+        Statement statement = commons.getStatement();
+        String query = "SELECT * FROM respondents;";
+        ResultSet resultSet = statement.executeQuery(query);
+        while (resultSet.next()) {
+            HashMap hashMap = new HashMap<>();
             hashMap.put("RESPONDENTS", resultSet.getString("RESPONDENTS"));
             hashMap.put("PASSWORDS", resultSet.getString("PASSWORDS"));
             arrayList.add(hashMap);
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
         }
-
-        return arrayList;
+    } catch (Exception e) {
+        System.out.println(e.getMessage());
     }
+    return arrayList;
+}
+
 
 
 }
